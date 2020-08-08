@@ -7,7 +7,9 @@ class Company < ApplicationRecord
   validate :validate_email_user_name, if: -> { email.present? }
   validate :validate_email_domain, if: -> { email.present? }
   validate :validate_zip_code
-  before_save { self.email = email.downcase }
+  validates :name, presence: true
+
+  before_save { self.email = email.downcase if email.present? }
   before_save :update_city_state, if: -> { :zip_code_changed? }
 
   private
@@ -19,7 +21,7 @@ class Company < ApplicationRecord
       :email,
       message: I18n.t(
         'error_message.email.invalid_domain',
-        allowed_domains: ALLOWED_EMAIL_DOMAINS.join(','),
+        allowed_domains: ALLOWED_EMAIL_DOMAINS.join(', '),
       ),
     )
   end

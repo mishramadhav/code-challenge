@@ -39,7 +39,7 @@ en:
     not_found: "No company found with the id: %{id}"
   error_message:
     email:
-      invalid_domain: "Domain not allowed. Use one of theses: %{allowed_domains}"
+      invalid_domain: "Domain not allowed. Use one of these: %{allowed_domains}"
       invalid_email: "Email is not valid."
     zip_code:
       empty: "Please provide 5 digit valid US zip code."

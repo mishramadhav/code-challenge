@@ -1,6 +1,6 @@
 hometown_painting:
   name: Hometown Painting
-  email: "hometown_painting@hometown_painting.com"
+  email: "hometown_painting@getmainstreet.com"
   zip_code: "93003"
   phone: "555-808-8888"
 
@@ -30,6 +30,5 @@ marcus_painting:
 
 brown_painting:
   name: "Brown Residential Painting"
-  email: "brown_painting@brown_painting.com"
-  zip_code:
+  zip_code: "37201"
   phone: "555-808-8888"
