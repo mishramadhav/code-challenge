@@ -1,6 +1,16 @@
 <div class="py-5">
   <%= form_for @company do |f| %>
 
+  <% if @company.errors.present? %>
+    <div class="alert alert-danger">
+      <ul>
+        <% @company.errors.full_messages.each do |msg| %>
+          <li style="color:red"><%= msg %> </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
     <div class="row my-lg-3">
       <div class="col-lg-3">
         <label><strong>Name</strong><br><small class="text-muted">The public DBA, or Common name of the organization</small></label>
@@ -53,7 +63,7 @@
       </div>
       <div class="col-lg offset-lg-1">
         <div class="form-group">
-          <%= f.text_field :email, class: "form-control", placeholder: "hello@company.com"%>
+          <%= f.text_field :email, class: "form-control", placeholder: "hello@getmainstreet.com"%>
         </div>
       </div>
     </div>
